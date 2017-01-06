@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    protected ImageView mapButton;
+    private ImageView mapButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    protected void mapButtonClicked() {
+    private void mapButtonClicked() {
         // lance une nouvelle activity
         final Intent t = new Intent(this, AgencyListActivity.class);
         startActivity(t);

@@ -10,7 +10,7 @@ public class AgencyRepository {
 
     private DataBaseHelper helper;
 
-    protected Context context;
+    private Context context;
 
     public AgencyRepository(Context context) {
         this.context = context;

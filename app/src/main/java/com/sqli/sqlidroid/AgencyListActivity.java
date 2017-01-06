@@ -38,7 +38,7 @@ public class AgencyListActivity extends Activity {
     }
 
 
-    protected void init() {
+    private void init() {
         Cursor agencies = repo.getAllAgencies();
 
         String[] from = {"name", "label"};
@@ -55,7 +55,7 @@ public class AgencyListActivity extends Activity {
     }
 
 
-    protected void itemViewClicked(int position) {
+    private void itemViewClicked(int position) {
 
         final Intent t = new Intent(this, AgencyDetailActivity.class);
         t.putExtra("selectedAgencyId", (int)agencyView.getItemIdAtPosition(position));

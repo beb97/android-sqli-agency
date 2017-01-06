@@ -111,7 +111,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 		InputStream myInput = myContext.getAssets().open(DB_NAME);
 		
 		AssetManager assets = myContext.getAssets();
-		Log.d("BLA", "rien");
 		for(String asset : assets.list("")) {
 			Log.d("BLA", asset);
 		}
@@ -165,10 +164,5 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 	}
 
-	// Add your public helper methods to access and get content from the
-	// database.
-	// You could return cursors by doing "return myDataBase.query(....)" so it'd
-	// be easy
-	// to you to create adapters for your views.
 
 }
