@@ -29,17 +29,17 @@ public class Agency {
      * @param c Cursor
      * @return l'objet Agency
      */
-    public static Agency fromCursor(Cursor c) {
-        Agency agency = Agency.builder().build();
-//        Agency agency = new Agency();
-        agency.id      = c.getInt(c.getColumnIndex("_id"));
-        agency.name = c.getString(c.getColumnIndex("name"));
-        agency.label = c.getString(c.getColumnIndex("label"));
-        agency.address = c.getString(c.getColumnIndex("address"));
-        agency.longitude = c.getDouble(c.getColumnIndex("longitude"));
-        agency.latitude = c.getDouble(c.getColumnIndex("latitude"));
-        agency.phone = c.getString(c.getColumnIndex("phone"));
 
+    public static Agency fromCursor(Cursor c) {
+        Agency agency = Agency.builder()
+                .id(c.getInt(c.getColumnIndex("_id")))
+                .name(c.getString(c.getColumnIndex("name")))
+                .label(c.getString(c.getColumnIndex("label")))
+                .address(c.getString(c.getColumnIndex("address")))
+                .longitude(c.getDouble(c.getColumnIndex("longitude")))
+                .latitude(c.getDouble(c.getColumnIndex("latitude")))
+                .phone(c.getString(c.getColumnIndex("phone")))
+                .build();
         // gère les retours à la ligne récupérés en base.
         agency.address = agency.address.replaceAll("<br>", "\n");
 
