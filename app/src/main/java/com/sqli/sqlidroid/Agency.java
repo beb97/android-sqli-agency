@@ -2,63 +2,13 @@ package com.sqli.sqlidroid;
 
 import android.database.Cursor;
 
+import lombok.Data;
+import lombok.experimental.Builder;
+import lombok.val;
+
+@Data
+@Builder // TEST COMMENT
 public class Agency {
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLabel() {
-        return label;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
 
     private int id;
 
@@ -80,7 +30,8 @@ public class Agency {
      * @return l'objet Agency
      */
     public static Agency fromCursor(Cursor c) {
-        Agency agency = new Agency();
+        Agency agency = Agency.builder().build();
+//        Agency agency = new Agency();
         agency.id      = c.getInt(c.getColumnIndex("_id"));
         agency.name = c.getString(c.getColumnIndex("name"));
         agency.label = c.getString(c.getColumnIndex("label"));

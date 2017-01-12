@@ -14,6 +14,7 @@ import android.widget.SimpleCursorAdapter;
 
 public class AgencyListActivity extends Activity {
 
+
     private ListView agencyView;
 
     private AgencyRepository repo;
